@@ -1,0 +1,10 @@
+/**
+后台所有全局使用样式
+ */
+
+.title-right{
+    float: right;
+    /*color: #009688;*/
+    font-family: xinghei;
+    font-size: 24px;
+}
