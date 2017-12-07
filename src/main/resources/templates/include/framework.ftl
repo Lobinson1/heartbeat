@@ -1,10 +1,10 @@
-<%--
+<#--
   Created by IntelliJ IDEA.
   User: chenjunxu
   Date: 2017/10/16
   Time: 17:57
   To change this template use File | Settings | File Templates.
---%>
+-->
 <div class="layui-header">
     <div class="layui-logo">第一步</div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
@@ -67,6 +67,6 @@
     });
     $('[nav-code]').on('click', function () {
         var code = $(this).attr('nav-code');
-        $('#index-body').attr('src', '${apps}/manager/index/navCode?code='+code);
+        $('#index-body').attr('src', 'manager/index/navCode?code='+code);
     })
 </script>

@@ -8,20 +8,20 @@
 <html>
 <head>
     <title>index</title>
-    <#import "/templates/include/include.ftl" as include>
+    <#include "../include/include.ftl">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-<#import "/templates/include/framework.ftl" as framework>
+<#include "../include/framework.ftl">
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-            <iframe id="index-body" name="index-body" src="${apps}/manager/index/index" width="100%" height="94%" style="border: none"></iframe>
+            <iframe id="index-body" name="index-body" src="/manager/index/index" width="100%" height="94%" style="border: none"></iframe>
         </div>
     </div>
 
-    <#import "/templates/include/foot.ftl" as foot>
+    <#include "../include/foot.ftl">
 </div>
 </body>
 </html>

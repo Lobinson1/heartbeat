@@ -1,16 +1,15 @@
-<%--
+<#--
   Created by IntelliJ IDEA.
   User: chenjunxu
   Date: 2017/10/17
   Time: 10:40
   To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+-->
 <!DOCTYPE html>
 <html>
 <head>
     <title>index</title>
-    <#import "/templates/include/include.ftl" as include>
+    <#include "../../include/include.ftl">
     <link rel="stylesheet" href="/static/manager/index/css/clock.css">
 
 </head>
@@ -24,7 +23,7 @@
                 <div class="digits"></div>
                 <div class="digits"></div>
             </div>
-            <%--<%@include file="/WEB-INF/include/weather.ftl"%>--%>
+            <#--<%@include file="/WEB-INF/include/weather.ftl"%>-->
         </div>
 
     </div>

@@ -7,12 +7,12 @@
 --%>
 <html>
 <head>
-    <#import "/templates/include/include.ftl" as include>
+    <#include "../../include/include.ftl">
     <title>lobinson注册</title>
 </head>
 <body>
 <div class="layui-main">
-    <form action="${apps}/login/register" class="layui-form layui-form-pane" method="post">
+    <form action="login/register" class="layui-form layui-form-pane" method="post">
         <div class="layui-form-item">
             <label class="layui-form-label">输入框</label>
             <div class="layui-input-block">
@@ -39,7 +39,7 @@
         form.verify({
             username: function (value, item) {
                 var text =$.ajax({
-                    url: '${apps}/login/checkUsername',
+                    url: 'login/checkUsername',
                     type: 'post',
                     async: false,
                     data: {

@@ -9,7 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <#import "/templates/include/include.ftl" as include>
+    <#include "../../include/include.ftl">
     <title>login</title>
     <link rel="stylesheet" href="/static/manager/login/css/login.css">
 </head>
@@ -18,7 +18,7 @@
     <div class="login-form">
         <h1>Login</h1>
         <br>
-        <form id="uForm" action="${apps}/manager/login" method="post" class="layui-form layui-form-pane">
+        <form id="uForm" action="manager/login" method="post" class="layui-form layui-form-pane">
             <div class="form-group log-status">
                 <input type="text" class="form-control" placeholder="Username " id="UserName" name="username" lay-verify="username">
                 <i class="fa fa-user"></i>
@@ -46,7 +46,7 @@
             username: function (value, item) {
                 var valid = false;
                 $.ajax({
-                    url: "${apps}/login/checkUsername",
+                    url: "login/checkUsername",
                     type: "get",
                     data: {
                         username: value
