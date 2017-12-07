@@ -21,4 +21,9 @@ public class IndexController {
 	public String managerIndex(){
 		return "manager/index";
 	}
+
+	@RequestMapping("manager/index/index")
+	public String controlIndex() {
+		return "manager/index/index";
+	}
 }

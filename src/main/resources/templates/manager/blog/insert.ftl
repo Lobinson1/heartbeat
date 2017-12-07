@@ -17,7 +17,7 @@
                 <a href="javascript:window.history.back();" class="layui-btn-small layui-btn">返回</a>
                 <h2 class="title-right">新建博客</h2>
                 <hr class="layui-bg-cyan">
-                <form action="manager/blog/insert" method="post" class="layui-form">
+                <form action="/manager/blog/insert" method="post" class="layui-form">
                     
                 </form>
             </div>

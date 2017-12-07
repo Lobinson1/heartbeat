@@ -14,7 +14,7 @@
     <div class="layui-container">
         <div class="layui-row">
             <div class="layui-col-xs9 layui-col-sm9 layui-col-md11">
-                <a href="manager/blog/insert" class="layui-btn-small layui-btn">创建博客</a>
+                <a href="/manager/blog/insert" class="layui-btn-small layui-btn">创建博客</a>
                 <table class="layui-table" lay-skin="line">
                     <colgroup>
                         <col width="150">
