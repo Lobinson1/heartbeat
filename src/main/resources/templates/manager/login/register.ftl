@@ -1,10 +1,10 @@
-<%--
+<#--
   Created by IntelliJ IDEA.
   User: chenjunxu
   Date: 2017/7/26
   Time: 15:11
   To change this template use File | Settings | File Templates.
---%>
+-->
 <html>
 <head>
     <#include "../../include/include.ftl">

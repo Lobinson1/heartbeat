@@ -1,10 +1,10 @@
-<%--
+<#--
   Created by IntelliJ IDEA.
   User: chenjunxu
   Date: 2017/7/26
   Time: 15:58
   To change this template use File | Settings | File Templates.
---%>
+-->
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
     <div class="login-form">
         <h1>Login</h1>
         <br>
-        <form id="uForm" action="manager/login" method="post" class="layui-form layui-form-pane">
+        <form id="uForm" action="/manager/login" method="post" class="layui-form layui-form-pane">
             <div class="form-group log-status">
                 <input type="text" class="form-control" placeholder="Username " id="UserName" name="username" lay-verify="username">
                 <i class="fa fa-user"></i>

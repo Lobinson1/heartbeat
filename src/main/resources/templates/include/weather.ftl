@@ -1,11 +1,10 @@
-<%--
+<#--
   Created by IntelliJ IDEA.
   User: chenjunxu
   Date: 2017/10/17
   Time: 17:44
   To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+-->
 <link rel="stylesheet" href="${apps}/static/manager/index/css/weather.css">
 
 <div id="weather-card">
@@ -57,7 +56,7 @@
     <svg id="outer"></svg>
 </div>
 
-<script src='${apps}/static/manager/index/js/jquery-2.2.4.min.js'></script>
-<script src='${apps}/static/manager/index/js/TweenMax.min.js'></script>
-<script src='${apps}/static/manager/index/js/snap.svg-min.js'></script>
-<script src="${apps}/static/manager/index/js/weather.js"></script>
+<script src='/static/manager/index/js/jquery-2.2.4.min.js'></script>
+<script src='/static/manager/index/js/TweenMax.min.js'></script>
+<script src='/static/manager/index/js/snap.svg-min.js'></script>
+<script src="/static/manager/index/js/weather.js"></script>
