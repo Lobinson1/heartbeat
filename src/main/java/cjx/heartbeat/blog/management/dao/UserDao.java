@@ -18,8 +18,6 @@ import javax.persistence.Table;
 @Qualifier
 public interface UserDao extends CrudRepository<User, Integer>{
 
-	User getById(Integer id);
-
 	User getByUsername(String username);
 
 	Integer countByUsername(String username);

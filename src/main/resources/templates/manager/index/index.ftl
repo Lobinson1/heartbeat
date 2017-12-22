@@ -10,7 +10,7 @@
 <head>
     <title>index</title>
     <#include "../../include/include.ftl">
-    <link rel="stylesheet" href="/static/manager/index/css/clock.css">
+    <link rel="stylesheet" href="/manager/index/css/clock.css">
 
 </head>
 <body>
@@ -28,8 +28,8 @@
 
     </div>
 
-    <script src="/static/manager/index/js/moment.min.js"></script>
-    <script src="/static/manager/index/js/clock.js"></script>
+    <script src="/manager/index/js/moment.min.js"></script>
+    <script src="/manager/index/js/clock.js"></script>
 
 
 </body>

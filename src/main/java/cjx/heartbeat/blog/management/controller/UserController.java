@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 
 /**
- * ${DESCRIBE}
+ * 用户控制层  目前无用
  *
  * @author chenjunxu
  * @date 2017/7/19

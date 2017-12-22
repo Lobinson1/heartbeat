@@ -3,7 +3,7 @@ package cjx.heartbeat.blog.management.controller;
 import cjx.heartbeat.blog.management.utils.ResultUtils;
 
 /**
- * ${DESCRIBE}
+ * 公用控制层内容
  *
  * @author chenjunxu
  * @date 2017/12/6

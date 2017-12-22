@@ -67,6 +67,6 @@
     });
     $('[nav-code]').on('click', function () {
         var code = $(this).attr('nav-code');
-        $('#index-body').attr('src', 'manager/index/navCode?code='+code);
+        $('#index-body').attr('src', '/manager/index/navCode?code='+code);
     })
 </script>
