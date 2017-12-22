@@ -1,6 +1,9 @@
 package cjx.heartbeat.blog.management.controller;
 
 import cjx.heartbeat.blog.management.utils.ResultUtils;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.List;
 
 /**
  * 公用控制层内容
@@ -31,6 +34,15 @@ public class BaseController {
 
 	public static String True(String info) {
 		return resultUtils.True(info);
+	}
+
+	public String getLayUIData(List list){
+		JSONObject object = new JSONObject();
+		object.put("code", 0);
+		object.put("msg", "获取成功");
+		object.put("count", 10);
+		object.put("data", list);
+		return object.toJSONString();
 	}
 
 }

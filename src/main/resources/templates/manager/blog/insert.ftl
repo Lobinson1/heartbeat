@@ -9,6 +9,7 @@
 <head>
     <title>创建博客</title>
     <#include "../../include/include.ftl">
+    <script type="text/javascript" src="/manager/wangEditor/wangEditor.js"></script>
 </head>
 <body>
     <div class="layui-container">
@@ -17,10 +18,10 @@
                 <a href="javascript:window.history.back();" class="layui-btn-small layui-btn">返回</a>
                 <h2 class="title-right">新建博客</h2>
                 <hr class="layui-bg-cyan">
-                <form action="/manager/blog/insert" method="post" class="layui-form">
+                <form action="" method="post" class="layui-form">
                     <div class="layui-form-item">
                         <div style="display: block; width: 100px; position: absolute;">
-                            <select name="city">
+                            <select name="type">
                                 <#list blogType as type>
                                     <option value="${type.typeId}">${type.typeName}</option>
                                 </#list>
@@ -33,7 +34,8 @@
                     <div class="layui-form-item layui-form-text">
                         <label class="layui-form-label">正文</label>
                         <div class="layui-input-block">
-                            <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                            <div id="editor"></div>
+                            <input type="hidden" name="content" id="blog-content" />
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -51,10 +53,37 @@
 
     <script type="text/javascript">
         $(function () {
-            layui.use('form', function () {
+            layui.use(['form','layer'], function () {
                 var form = layui.form;
+                var layer = layui.layer;
                 form.render();
+                form.on('submit', function (data) {
+                    $.ajax({
+                        url: '/manager/blog/insert',
+                        type: 'post',
+                        data: data.field,
+                        success: function (data) {
+                            data =  eval("(" + data + ")");
+                            console.log(data, data.result);
+                            if (data.result === 'success'){
+                                layer.alert(data.msg);
+                            }
+                        }
+                    });
+
+                    return false;
+                });
             });
+
+            var E = window.wangEditor;
+            var editor = new E('#editor');
+            var $text1 = $('#blog-content');
+            editor.customConfig.onchange = function (html) {
+                // 监控变化，同步更新到 textarea
+                $text1.val(html)
+            };
+            editor.create();
+
         })
     </script>
 </body>

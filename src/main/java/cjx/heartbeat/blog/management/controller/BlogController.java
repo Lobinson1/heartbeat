@@ -9,8 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * ${DESCRIBE}
@@ -36,6 +38,13 @@ public class BlogController extends BaseController {
 		return "manager/blog/list";
 	}
 
+	@RequestMapping("list")
+	@ResponseBody
+	public String list(){
+		List<Blog> blogs = blogService.getAll();
+		return getLayUIData(blogs);
+	}
+
 	@RequestMapping(value = "insert", method = RequestMethod.GET)
 	public String insert(Model model){
 		model.addAttribute("blogType", typeService.getAll());
@@ -43,6 +52,7 @@ public class BlogController extends BaseController {
 	}
 
 	@RequestMapping(value = "insert", method = RequestMethod.POST)
+	@ResponseBody
 	public String insert(HttpServletRequest request, Blog blog){
 		if (blogService.save(blog) == null){
 			return Error("创建新博失败");

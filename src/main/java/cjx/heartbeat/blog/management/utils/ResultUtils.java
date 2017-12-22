@@ -1,5 +1,7 @@
 package cjx.heartbeat.blog.management.utils;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * ${DESCRIBE}
  *
@@ -14,7 +16,11 @@ public class ResultUtils {
 	public static final String FALSE = "false";
 
 	public String getResult(int code, String result, String msg){
-		return "{\"code\":"+code+",\"result\":"+result+",\"msg\":"+msg+"}";
+		JSONObject object = new JSONObject();
+		object.put("code", code);
+		object.put("result", result);
+		object.put("msg", msg);
+		return object.toJSONString();
 	}
 
 	public String Success(String msg){

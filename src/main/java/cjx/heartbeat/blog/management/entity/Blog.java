@@ -1,9 +1,8 @@
 package cjx.heartbeat.blog.management.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GeneratorType;
+
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -17,6 +16,7 @@ import java.util.Date;
 public class Blog {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String title;
 	private String blogAbstract;

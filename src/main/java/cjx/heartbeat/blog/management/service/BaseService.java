@@ -1,6 +1,7 @@
 package cjx.heartbeat.blog.management.service;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.List;
@@ -16,10 +17,12 @@ public abstract class BaseService<T, PK extends Serializable> {
 
 	public abstract CrudRepository<T, PK> getEntityDao();
 
+	@Transactional
 	public T save(T t){
 		return getEntityDao().save(t);
 	}
 
+	@Transactional
 	public T update(T t){
 		return getEntityDao().save(t);
 	}
@@ -36,14 +39,17 @@ public abstract class BaseService<T, PK extends Serializable> {
 		return (List<T>) getEntityDao().findAll((Iterable<PK>) ids.iterator());
 	}
 
+	@Transactional
 	public void delete(PK id){
 		getEntityDao().delete(id);
 	}
 
+	@Transactional
 	public void deleteAll(){
 		getEntityDao().deleteAll();
 	}
 
+	@Transactional
 	public void delete(T t){
 		getEntityDao().delete(t);
 	}
