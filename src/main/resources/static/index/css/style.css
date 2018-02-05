@@ -79,7 +79,6 @@ body .wrap-body{}
 /* ---------------------------------------------------------------------------- */
 
 header{}
-header .top-header{border-bottom: 1px solid #ccc;}
 header .wrap-header{padding: 35px 0;}
 header .tagline {color: #1C202A;font-family: "Montserrat",sans-serif;}
 header #search {margin: auto;}
