@@ -24,6 +24,16 @@ public class ShowController {
 		this.blogService = blogService;
 	}
 
+	/**
+	 * 访问网站首页
+	 *
+	 * @return
+	 */
+	@RequestMapping("/index")
+	public String index(){
+		return "index";
+	}
+
 	@RequestMapping("blog/{id}")
 	public String detail(@PathVariable String id, Model model){
 		Blog blog = blogService.getById(Integer.valueOf(id));

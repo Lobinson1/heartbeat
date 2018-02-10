@@ -16,16 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexController {
 
 	/**
-	 * 访问网站首页
-	 *
-	 * @return
-	 */
-	@RequestMapping("/")
-	public String index(){
-		return "index";
-	}
-
-	/**
 	 * 访问后台首页
 	 *
 	 * @return
