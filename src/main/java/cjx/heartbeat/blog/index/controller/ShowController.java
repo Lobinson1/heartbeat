@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author chenjunxu
  * @date 2017/12/25
  */
-@Controller("show")
+@Controller
 public class ShowController {
 
 	private final BlogService blogService;
@@ -34,7 +34,7 @@ public class ShowController {
 		return "index";
 	}
 
-	@RequestMapping("blog/{id}")
+	@RequestMapping("/blog/{id}")
 	public String detail(@PathVariable String id, Model model){
 		Blog blog = blogService.getById(Integer.valueOf(id));
 		model.addAttribute("blog", blog);

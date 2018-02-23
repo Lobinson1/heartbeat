@@ -21,7 +21,6 @@
                 <div class="ampm"></div>
                 <div class="alarm"></div>
                 <div class="digits"></div>
-                <div class="digits"></div>
             </div>
             <#--<%@include file="/WEB-INF/include/weather.ftl"%>-->
         </div>
