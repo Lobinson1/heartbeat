@@ -1,36 +1,54 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.3.RELEASE'
+        esVersion = '6.2.2'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+//        maven{
+//            url "http://pm.kingyea.com.cn:8888/artifactory/libs-snapshot-local"
+//        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'cjx.heartbeat'
 version = '0.0.1-SNAPSHOT'
 
-description = """blog"""
+description = "blog"
 
-sourceCompatibility = 1.5
-targetCompatibility = 1.5
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
+    options.encoding = 'UTF-8'
 }
-
-
 
 repositories {
-        
-     maven { url "http://repo.maven.apache.org/maven2" }
+
+    maven { url "http://repo.maven.apache.org/maven2" }
 }
 dependencies {
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version:'1.5.9.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version:'1.5.9.RELEASE'
-    compile group: 'com.alibaba', name: 'fastjson', version:'1.2.31'
-    compile group: 'org.apache.commons', name: 'commons-lang3', version:'3.5'
-    compile group: 'commons-codec', name: 'commons-codec', version:'1.10'
-    compile group: 'commons-lang', name: 'commons-lang', version:'2.6'
-    compile group: 'junit', name: 'junit', version:'4.12'
-    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version:'1.5.9.RELEASE'
-    runtime group: 'mysql', name: 'mysql-connector-java', version:'5.1.44'
-    // https://mvnrepository.com/artifact/com.alibaba/druid
-    compile group: 'com.alibaba', name: 'druid', version: '1.1.9'
-    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.9.RELEASE') {
-exclude(module: 'commons-logging')
-    }
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-freemarker')
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.31'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
+    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+    compile group: 'junit', name: 'junit', version: '4.12'
+    runtime('org.springframework.boot:spring-boot-devtools')
+    runtime group: 'mysql', name: 'mysql-connector-java', version: '5.1.44'
+    compile('com.alibaba:druid-spring-boot-starter:1.1.9')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+configurations {
+//    providedRuntime
+    all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 }

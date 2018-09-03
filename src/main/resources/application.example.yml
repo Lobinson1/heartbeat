@@ -1,0 +1,18 @@
+# jdbc connect info
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: ***
+    password: ***
+    url: jdbc:mysql://127.0.0.1:3306/***
+    druid:
+      max-wait: 5000
+      min-idle: 10
+      max-active: 30
+      query-timeout: 3000
+
+
+weather:
+  city-url: https://search.heweather.com/find
+  url: https://free-api.heweather.com/s6/weather
+  key: ***
