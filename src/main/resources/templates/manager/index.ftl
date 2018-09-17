@@ -1,27 +1,36 @@
-<#--
-  Created by IntelliJ IDEA.
-  User: chenjunxu
-  Date: 2017/8/18
-  Time: 10:50
-  To change this template use File | Settings | File Templates.
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>index</title>
-    <#include "../include/include.ftl">
+<#include "../include/include.ftl">
 </head>
-<body class="layui-layout-body">
-<div class="layui-layout layui-layout-admin">
-<#include "../include/framework.ftl">
+<body>
+<header>
+<#include "../include/head.ftl"/>
+</header>
 
-    <div class="layui-body">
-        <!-- 内容主体区域 -->
-        <div style="padding: 15px;">
-            <iframe id="index-body" name="index-body" src="/manager/index/index" width="100%" height="94%" style="border: none"></iframe>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-row layui-col-space10">
+            <div class="layui-col-md2">
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">默认展开</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">解决方案</a>
+                    </li>
+                    <li class="layui-nav-item"><a href="">产品</a></li>
+                    <li class="layui-nav-item"><a href="">大数据</a></li>
+                </ul>
+            </div>
+            <div class="layui-col-md10">
+                1/3
+            </div>
         </div>
     </div>
-
-    <#include "../include/foot.ftl">
 </div>
+
 </body>
 </html>

@@ -4,6 +4,7 @@
     .layui-nav .layui-nav-item a:hover{color: #93D1FF}
     .top-header { border-bottom: 1px solid #ccc; }
 </style>
+<link rel="stylesheet" href="/index/css/zerogrid.css">
 <div class="top-header">
     <div class="zerogrid">
         <nav id="menu-wrap">
@@ -12,17 +13,17 @@
                     <a href="">HOME</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="">CENTER</a>
+                    <a href="/manager/index">CENTER</a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="">IS ME</a>
-                <#--<dl class="layui-nav-child">-->
-                <#--<dd><a href="javascript:;">修改信息</a></dd>-->
-                <#--<dd><a href="javascript:;">安全管理</a></dd>-->
-                <#--<dd><a href="javascript:;">退了</a></dd>-->
-                <#--</dl>-->
                 </li>
             </ul>
         </nav>
     </div>
 </div>
+<script>
+    layui.use(['element'], function () {
+        var element = layui.element;
+    })
+</script>

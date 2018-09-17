@@ -11,7 +11,7 @@ import java.net.URLConnection;
 import java.net.UnknownHostException;
 
 /**
- * ${DESCRIBE}
+ * Http工具
  *
  * @author chenjunxu
  * @date 2018/9/3

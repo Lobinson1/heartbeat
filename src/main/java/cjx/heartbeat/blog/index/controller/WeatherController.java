@@ -36,14 +36,13 @@ public class WeatherController {
 	@RequestMapping("now")
 	@ResponseBody
 	public String now(HttpServletRequest request, String location) throws Exception {
-		if (StringUtils.isNotBlank(location)) {
+		if (StringUtils.isBlank(location)) {
 			location = getLocationByIP(request);
 		}
 		String city = sendGet(searchCityUrl, "key=" + userKey + "&location=" + location);
 		JSONObject jsonObject = JSONObject.parseObject(city);
 		String cid = jsonObject.getJSONArray("HeWeather6").getJSONObject(0).getJSONArray("basic").getJSONObject(0).getString("cid");
-		System.out.println(city);
-		String data = sendGet(weatherUrl, "key=8" + userKey + "&location=" + cid);
+		String data = sendGet(weatherUrl, "key=" + userKey + "&location=" + cid);
 		JSONObject object = JSONObject.parseObject(data);
 		JSONObject object1 = object.getJSONArray("HeWeather6").getJSONObject(0).getJSONObject("now");
 		Map<String, String> params = new HashMap<>();
@@ -70,13 +69,12 @@ public class WeatherController {
 	@RequestMapping("dailyThree")
 	@ResponseBody
 	public String dailyThree(HttpServletRequest request, String location) throws Exception {
-		if (StringUtils.isNotBlank(location)) {
+		if (StringUtils.isBlank(location)) {
 			location = getLocationByIP(request);
 		}
 		String city = sendGet(searchCityUrl, "key=" + userKey + "&location=" + location);
 		JSONObject jsonObject = JSONObject.parseObject(city);
 		String cid = jsonObject.getJSONArray("HeWeather6").getJSONObject(0).getJSONArray("basic").getJSONObject(0).getString("cid");
-		System.out.println(city);
 		String data = sendGet(weatherUrl, "key=" + userKey + "&location=" + cid);
 		JSONObject object = JSONObject.parseObject(data);
 		JSONArray daily = object.getJSONArray("HeWeather6").getJSONObject(0).getJSONArray("daily_forecast");  // 未來天氣預告

@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * 公共service方法
@@ -28,7 +29,8 @@ public abstract class BaseService<T, PK extends Serializable> {
 	}
 
 	public T getById(PK id){
-		return getEntityDao().findOne(id);
+		Optional<T> blog = getEntityDao().findById(id);
+		return blog.orElse(null);
 	}
 
 	public List<T> getAll(){
@@ -36,12 +38,12 @@ public abstract class BaseService<T, PK extends Serializable> {
 	}
 
 	public List<T> getAll(List<PK> ids){
-		return (List<T>) getEntityDao().findAll((Iterable<PK>) ids.iterator());
+		return (List<T>) getEntityDao().findAllById((Iterable<PK>) ids.iterator());
 	}
 
 	@Transactional
 	public void delete(PK id){
-		getEntityDao().delete(id);
+		getEntityDao().deleteById(id);
 	}
 
 	@Transactional
@@ -59,6 +61,6 @@ public abstract class BaseService<T, PK extends Serializable> {
 	}
 
 	public boolean isExist(PK id) {
-		return getEntityDao().exists(id);
+		return getEntityDao().existsById(id);
 	}
 }

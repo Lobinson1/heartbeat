@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <!-- CSS
   ================================================== -->
-    <link rel="stylesheet" href="/index/css/zerogrid.css">
     <link rel="stylesheet" href="/index/css/style.css">
     <link rel="stylesheet" href="/index/css/menu.css">
     <link rel="stylesheet" href="/index/css/responsiveslides.css">
@@ -23,7 +22,6 @@
     <script src="/index/js/jquery183.min.js"></script>
     <script src="/index/js/responsiveslides.min.js"></script>
     <script>
-        // You can also use "$(window).load(function() {"
         $(function () {
             // Slideshow
             $("#slider").responsiveSlides({
@@ -54,16 +52,11 @@
     <script src="/index/js/css3-mediaqueries.js"></script>
     <![endif]-->
 
-    <style>
-        /*.layui-bg-white{background-color: #ffffff!important;} !*白*!*/
-        /*.layui-nav .layui-nav-item a{color: #8C918F}*/
-        /*.layui-nav .layui-nav-item a:hover{color: #93D1FF}*/
-    </style>
 </head>
 <body>
 <div class="wrap-body">
 
-    <!--////////////////////////////////////Header-->
+    <!--Header-->
     <header>
         <#include "include/head.ftl"/>
         <div class="clearfix">
@@ -428,10 +421,6 @@
             var isiPad = navigator.userAgent.match(/iPad/i) != null;
             if (isiPad) $('#menu ul').addClass('no-transition');
         });
-
-        layui.use(['element'], function () {
-            var element = layui.element;
-        })
 
     </script>
 
