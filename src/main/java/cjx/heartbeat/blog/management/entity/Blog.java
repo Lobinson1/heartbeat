@@ -15,6 +15,10 @@ import java.util.Date;
 @Entity
 public class Blog {
 
+	public static final int TYPE_YUANCHUANG = 1;
+	public static final int TYPE_ZHUANZAI = 2;
+	public static final int TYPE_FANYI = 3;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;

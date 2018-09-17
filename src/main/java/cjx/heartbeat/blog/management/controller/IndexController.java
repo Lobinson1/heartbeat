@@ -1,10 +1,13 @@
 package cjx.heartbeat.blog.management.controller;
 
+import cjx.heartbeat.blog.management.entity.Blog;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 首页访问
@@ -14,16 +17,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 public class IndexController {
-
-	/**
-	 * 访问后台首页
-	 *
-	 * @return
-	 */
-	@RequestMapping("manager/index")
-	public String managerIndex(){
-		return "manager/index";
-	}
 
 	/**
 	 * 获取后台首页展示内容

@@ -8,3 +8,53 @@
     font-family: xinghei;
     font-size: 24px;
 }
+
+.info-content {
+    border-left: solid 1px #cccccc;
+    margin-left: 8px;
+}
+.show-info {
+    padding: 20px 0 0 20px;
+    min-height: 600px;
+}
+.page-item {
+    padding: 18px 0;
+    border-bottom: solid 1px #cccccc;
+    height: 55px;
+}
+.page-item-title a{
+    font-size: 18px;
+    color: #4f4f4f;
+}
+.page-item-title a:hover{
+    color: #93D1FF;
+}
+.page-item-info {
+    padding-top: 10px;
+    font-size: 14px;
+    color: #bbbbbb;
+}
+.page-item-info span {
+    margin-right: 20px;
+}
+.page-item-info-left {
+    display: block;
+    position: absolute;
+}
+.page-item-info-right {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+.page-item-info-right a {
+    padding: 0 10px 0 5px;
+    border-right: solid 1px #cccccc;
+}
+.del {
+    border: none !important;
+    color: red;
+}
+.del:hover {
+    color: red !important;
+}

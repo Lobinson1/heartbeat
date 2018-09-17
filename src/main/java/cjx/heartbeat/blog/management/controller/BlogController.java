@@ -3,6 +3,7 @@ package cjx.heartbeat.blog.management.controller;
 import cjx.heartbeat.blog.management.entity.Blog;
 import cjx.heartbeat.blog.management.service.BlogService;
 import cjx.heartbeat.blog.management.service.TypeService;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,34 +35,40 @@ public class BlogController extends BaseController {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String blog(){
-		return "manager/blog/list";
+	public String blog(Model model) {
+		List<Blog> list = blogService.getAll();
+		model.addAttribute("list", list);
+		model.addAttribute("totalCount", list.size());
+		return "manager/index";
 	}
 
 	@RequestMapping("list")
 	@ResponseBody
-	public String list(){
-		List<Blog> blogs = blogService.getAll();
-		return getLayUIData(blogs);
+	public JSONObject list(Integer pageSize) {
+		List<Blog> list = blogService.getAll();
+		JSONObject result = new JSONObject();
+		result.put("list", list);
+		result.put("totalCount", list.size());
+		return result;
 	}
 
 	@RequestMapping(value = "insert", method = RequestMethod.GET)
-	public String insert(Model model){
+	public String insert(Model model) {
 		model.addAttribute("blogType", typeService.getAll());
 		return "manager/blog/insert";
 	}
 
 	@RequestMapping(value = "insert", method = RequestMethod.POST)
 	@ResponseBody
-	public String insert(HttpServletRequest request, Blog blog){
-		if (blogService.save(blog) == null){
+	public String insert(HttpServletRequest request, Blog blog) {
+		if (blogService.save(blog) == null) {
 			return Error("创建新博失败");
 		}
 		return Success("创建成功");
 	}
 
 	@RequestMapping("checkTitle/{title}")
-	public String checkTitle(@PathVariable String title){
+	public String checkTitle(@PathVariable String title) {
 		return blogService.checkTitle(title) ? Success("标题可用") : False("标题已存在");
 	}
 }
