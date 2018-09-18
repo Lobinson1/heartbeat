@@ -1,7 +1,5 @@
 package cjx.heartbeat.blog.management.entity;
 
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
 import java.util.Date;
 

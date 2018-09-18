@@ -36,20 +36,15 @@ public class BlogController extends BaseController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String blog(Model model) {
-		List<Blog> list = blogService.getAll();
-		model.addAttribute("list", list);
-		model.addAttribute("totalCount", list.size());
+		long count = blogService.count();
+		model.addAttribute("totalCount", count);
 		return "manager/index";
 	}
 
 	@RequestMapping("list")
 	@ResponseBody
-	public JSONObject list(Integer pageSize) {
-		List<Blog> list = blogService.getAll();
-		JSONObject result = new JSONObject();
-		result.put("list", list);
-		result.put("totalCount", list.size());
-		return result;
+	public List<Blog> list(Integer pageIndex, Integer pageSize) {
+		return blogService.getPageList(pageIndex, pageSize);
 	}
 
 	@RequestMapping(value = "insert", method = RequestMethod.GET)

@@ -10,13 +10,13 @@
         <nav id="menu-wrap">
             <ul class="layui-nav layui-bg-blue layui-bg-white">
                 <li class="layui-nav-item">
-                    <a href="">HOME</a>
+                    <a href="/index">HOME</a>
+                </li>
+                <li class="layui-nav-item layui-this">
+                    <a href="/manager/blog">CENTER</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="/manager/index">CENTER</a>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="">IS ME</a>
+                    <a href="/about">IS ME</a>
                 </li>
             </ul>
         </nav>

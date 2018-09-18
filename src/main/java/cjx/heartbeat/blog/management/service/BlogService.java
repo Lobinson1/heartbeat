@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * ${DESCRIBE}
  *
@@ -25,5 +27,10 @@ public class BlogService extends BaseService<Blog, Integer> {
 
 	public boolean checkTitle(String title) {
 		return blogDao.countByTitle(title) <= 0;
+	}
+
+	public List<Blog> getPageList(Integer pageIndex, Integer pageSize) {
+		int pageBegin = (pageIndex - 1) * pageSize;
+		return blogDao.getPageList(pageBegin, pageSize);
 	}
 }
