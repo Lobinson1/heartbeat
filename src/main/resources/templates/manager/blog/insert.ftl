@@ -38,11 +38,38 @@
                                     style="background-color: #fff;border-left: solid 5px #93D1FF; line-height: 2px; font-size: 16px">写文章
                         </blockquote>
                         <form class="layui-form" action="" style="padding-top: 20px;">
-                            <input type="text" class="layui-input">
+                            <input type="text" class="layui-input" name="title">
                             <div class="layui-form-item" style="padding-top: 20px;">
                                 <div id="toolbar" style="border: solid 1px #cccccc;"></div>
                                 <div id="editor" style="height: 700px; border: solid 1px #cccccc;"></div>
-                                <input type="hidden" name="content" id="blog-content" />
+                                <input type="hidden" name="content" id="blog-content"/>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label" for="type">类型</label>
+                                    <div class="layui-input-inline">
+                                        <select name="type">
+                                        <#list blogType as type>
+                                            <option value="${type.typeId}">${type.typeName}</option>
+                                        </#list>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label" for="type">标签</label>
+                                    <div class="layui-input-inline">
+                                        <select name="tips">
+                                        <#list blogType as type>
+                                            <option value="${type.typeId}">${type.typeName}</option>
+                                        </#list>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">保存</button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -65,9 +92,10 @@
                     data: data.field,
                     success: function (data) {
                         data = eval("(" + data + ")");
-                        console.log(data, data.result);
                         if (data.result === 'success') {
-                            layer.alert(data.msg);
+                            layer.alert(data.msg, function () {
+                                window.location.href = "/manager/blog";
+                            });
                         }
                     }
                 });
@@ -79,7 +107,7 @@
         var E = window.wangEditor;
         var editor = new E('#toolbar', '#editor');
         editor.customConfig.uploadImgServer = '/manager/blog/upload'; //配置图片上传路径
-        editor.customConfig.debug = location.href.indexOf('wangeditor_debug_mode=1') > 0
+        editor.customConfig.debug = location.href.indexOf('wangeditor_debug_mode=1') > 0;
         var $text1 = $('#blog-content');
         editor.customConfig.onchange = function (html) {
             // 监控变化，同步更新到 textarea

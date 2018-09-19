@@ -10,9 +10,26 @@ spring:
       min-idle: 10
       max-active: 30
       query-timeout: 3000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    database: mysql
+  mvc:
+    favicon:
+      enabled: false
 
 
 weather:
   city-url: https://search.heweather.com/find
   url: https://free-api.heweather.com/s6/weather
   key: ***
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 80
+
+upload:
+  path: D:/upload

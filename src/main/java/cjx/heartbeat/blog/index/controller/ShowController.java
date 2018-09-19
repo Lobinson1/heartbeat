@@ -30,7 +30,8 @@ public class ShowController {
 	 * @return
 	 */
 	@RequestMapping("/index")
-	public String index(){
+	public String index(Model model){
+		model.addAttribute("action", "index");
 		return "index";
 	}
 
@@ -38,6 +39,7 @@ public class ShowController {
 	public String detail(@PathVariable String id, Model model){
 		Blog blog = blogService.getById(Integer.valueOf(id));
 		model.addAttribute("blog", blog);
+		model.addAttribute("action", "");
 		return "show/detail";
 	}
 

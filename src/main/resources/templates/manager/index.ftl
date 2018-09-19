@@ -41,7 +41,7 @@
                             {{#  layui.each(d, function(index, item){ }}
                             <div class="page-item">
                                 <div class="page-item-title">
-                                    <p><a href="javascript:void(0);">{{ item.title }}</a></p>
+                                    <p><a href="/blog/{{ item.id }}" target="_blank">{{ item.title }}</a></p>
                                 </div>
                                 <div class="page-item-info">
                                     <div class="page-item-info-left">

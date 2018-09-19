@@ -9,13 +9,13 @@
     <div class="zerogrid">
         <nav id="menu-wrap">
             <ul class="layui-nav layui-bg-blue layui-bg-white">
-                <li class="layui-nav-item">
+                <li class="layui-nav-item <#if action == 'index'>layui-this</#if>">
                     <a href="/index">HOME</a>
                 </li>
-                <li class="layui-nav-item layui-this">
+                <li class="layui-nav-item <#if action == 'center'>layui-this</#if>">
                     <a href="/manager/blog">CENTER</a>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item <#if action == 'about'>layui-this</#if>">
                     <a href="/about">IS ME</a>
                 </li>
             </ul>

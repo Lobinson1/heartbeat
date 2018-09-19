@@ -49,6 +49,7 @@ public class BlogController extends BaseController {
 	public String blog(Model model) {
 		long count = blogService.count();
 		model.addAttribute("totalCount", count);
+		model.addAttribute("action", "center");
 		return "manager/index";
 	}
 
@@ -61,6 +62,7 @@ public class BlogController extends BaseController {
 	@RequestMapping(value = "insert", method = RequestMethod.GET)
 	public String insert(Model model) {
 		model.addAttribute("blogType", typeService.getAll());
+		model.addAttribute("action", "center");
 		return "manager/blog/insert";
 	}
 

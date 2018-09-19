@@ -18,7 +18,7 @@ public class Blog {
 	public static final int TYPE_FANYI = 3;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String title;
 	private String blogAbstract;
