@@ -15,21 +15,7 @@
     <div class="layui-row">
         <div class="layui-row layui-col-space10">
             <div class="layui-col-md2">
-                <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                    <li class="layui-nav-item layui-this">
-                        <a href="javascript:void(0);"><i class="layui-icon layui-icon-edit"></i>&nbsp;写博客</a>
-                    </li>
-                    <hr class="layui-bg" style="background-color: #cccccc; padding: 0;margin: 0;">
-                    <li class="layui-nav-item">
-                        <a href="javascript:void(0);">文章管理</a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="javascript:void(0);">分类管理</a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="javascript:void(0);">大数据</a>
-                    </li>
-                </ul>
+                <#include "../../include/leftNav.ftl">
             </div>
             <div class="layui-col-md10">
                 <div class="info-content">

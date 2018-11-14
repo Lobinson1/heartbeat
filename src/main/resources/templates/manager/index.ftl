@@ -14,21 +14,7 @@
     <div class="layui-row">
         <div class="layui-row layui-col-space10">
             <div class="layui-col-md2">
-                <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                    <li class="layui-nav-item">
-                        <a href="/manager/blog/insert"><i class="layui-icon layui-icon-edit"></i>&nbsp;写博客</a>
-                    </li>
-                    <hr class="layui-bg" style="background-color: #cccccc; padding: 0;margin: 0;">
-                    <li class="layui-nav-item layui-this">
-                        <a href="/manager/blog">文章管理</a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="javascript:void(0);">分类管理</a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="javascript:void(0);">大数据</a>
-                    </li>
-                </ul>
+            <#include "../include/leftNav.ftl">
             </div>
             <div class="layui-col-md10">
                 <div class="info-content">
@@ -52,8 +38,8 @@
                                         <span><i class="layui-icon layui-icon-reply-fill"></i>&nbsp;0</span>
                                     </div>
                                     <div class="page-item-info-right">
-                                        <a href="javascript:void(0);">查看</a>
-                                        <a href="javascript:void(0);">编辑</a>
+                                        <a href="/blog/{{ item.id }}" target="_blank">查看</a>
+                                        <a href="/blog/insert/{{ item.id }}" target="_blank">编辑</a>
                                         <a class="del" href="javascript:void(0);">删除</a>
                                     </div>
                                 </div>
