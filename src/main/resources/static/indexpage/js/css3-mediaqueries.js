@@ -597,7 +597,7 @@ return _47>0;
 if("device-aspect-ratio"===_41.substring(l-19,l)){
 return _43==="aspect-ratio"&&screen.width*_44[1]===screen.height*_44[0];
 }else{
-if("color-index"===_41.substring(l-11,l)){
+if("color-indexpage"===_41.substring(l-11,l)){
 var _48=Math.pow(2,screen.colorDepth);
 if(_42!==null){
 if(_43==="absolute"){

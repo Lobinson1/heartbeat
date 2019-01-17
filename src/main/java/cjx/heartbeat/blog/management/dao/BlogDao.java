@@ -24,4 +24,9 @@ public interface BlogDao extends CrudRepository<Blog, Integer>{
 
 	@Query(value = "select * from t_cjx_blog limit ?1, ?2", nativeQuery = true)
 	List<Blog> getPageList(Integer pageIndex, Integer pageSize);
+
+	List<Blog> findBlogsByIsTopEquals(int tips);
+
+	@Query(value = "SELECT * FROM t_cjx_blog ORDER BY publish_time DESC LIMIT 0, ?1", nativeQuery = true)
+	List<Blog> findBlogsByRecent(int size);
 }

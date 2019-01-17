@@ -1,5 +1,6 @@
 package cjx.heartbeat.blog.management.service;
 
+import cjx.heartbeat.blog.management.constant.Constant;
 import cjx.heartbeat.blog.management.dao.BlogDao;
 import cjx.heartbeat.blog.management.entity.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,13 @@ public class BlogService extends BaseService<Blog, Integer> {
 	public List<Blog> getPageList(Integer pageIndex, Integer pageSize) {
 		int pageBegin = (pageIndex - 1) * pageSize;
 		return blogDao.getPageList(pageBegin, pageSize);
+	}
+
+	public List<Blog> getTopList() {
+		return blogDao.findBlogsByIsTopEquals(Constant.YES);
+	}
+
+	public List<Blog> getNewList(int size) {
+		return blogDao.findBlogsByRecent(size);
 	}
 }

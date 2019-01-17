@@ -7,20 +7,20 @@
     <title>Lobinson小屋</title>
     <meta name="description" content="Free Responsive Html5 Css3 Templates "/>
     <meta name="author" content=""/>
-    <#--<#assign apps=springMacroRequestContext.contextPath >-->
-    <#include "include/include.ftl">
+<#--<#assign apps=springMacroRequestContext.contextPath >-->
+<#include "include/include.ftl">
 
     <!-- Mobile Specific Metas
   ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <!-- CSS
   ================================================== -->
-    <link rel="stylesheet" href="/index/css/style.css">
-    <link rel="stylesheet" href="/index/css/menu.css">
-    <link rel="stylesheet" href="/index/css/responsiveslides.css">
-    <link href="/index/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script src="/index/js/jquery183.min.js"></script>
-    <script src="/index/js/responsiveslides.min.js"></script>
+    <link rel="stylesheet" href="/indexpage/css/style.css">
+    <link rel="stylesheet" href="/indexpage/css/menu.css">
+    <link rel="stylesheet" href="/indexpage/css/responsiveslides.css">
+    <link href= "/indexpage/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="/indexpage/js/jquery183.min.js"></script>
+    <script src="/indexpage/js/responsiveslides.min.js"></script>
     <script>
         $(function () {
             // Slideshow
@@ -43,13 +43,14 @@
     <!--[if lt IE 8]>
     <div style=' clear: both; text-align:center; position: relative;'>
         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
         </a>
     </div>
     <![endif]-->
     <!--[if lt IE 9]>
-    <script src="/index/js/html5.js"></script>
-    <script src="/index/js/css3-mediaqueries.js"></script>
+    <script src="/indexpage/js/html5.js"></script>
+    <script src="/indexpage/js/css3-mediaqueries.js"></script>
     <![endif]-->
 
 </head>
@@ -58,13 +59,14 @@
 
     <!--Header-->
     <header>
-        <#include "include/head.ftl"/>
+    <#assign bgcolor="#ffffff">
+    <#include "include/head.ftl"/>
         <div class="clearfix">
             <div class="wrap-header">
                 <div class="row">
                     <div class="col-full t-center">
                         <div class="wrap-col">
-                            <div class="logo"><a href="#"><img src="/index/images/indexlogo.png"/></a></div>
+                            <div class="logo"><a href="#"><img src="/indexpage/images/indexlogo.png"/></a></div>
                             <div class="tagline">这是我的一方小天地</div>
                         </div>
                     </div>
@@ -76,13 +78,13 @@
                 <div class="callbacks_container">
                     <ul class="rslides" id="slider">
                         <li>
-                            <img src="/index/images/1.jpg" alt="">
+                            <img src="/indexpage/images/1.jpg" alt="">
                         </li>
                         <li>
-                            <img src="/index/images/2.jpg" alt="">
+                            <img src="/indexpage/images/2.jpg" alt="">
                         </li>
                         <li>
-                            <img src="/index/images/3.jpg" alt="">
+                            <img src="/indexpage/images/3.jpg" alt="">
                         </li>
                     </ul>
                 </div>
@@ -96,25 +98,28 @@
                 <div class="row">
                     <div id="main-content" class="col-2-3">
                         <div class="wrap-content">
-                            <div class="row">
-                                <article>
-                                    <div class="art-header">
-                                        <div class="entry-title">
-                                            <a href="#">水里的世界 画里的念想</a>
+                            <#list tops as top>
+                                <div class="row">
+                                    <article>
+                                        <div class="art-header">
+                                            <div class="entry-title">
+                                                <a href="#">水里的世界 画里的念想</a>
+                                            </div>
+                                            <span>2015-11-12</span>
                                         </div>
-                                        <span>2015-11-12</span>
-                                    </div>
-                                    <div class="art-content">
-                                        <div class="zoom-container">
-                                            <a href="#">
-                                                <img src="/index/images/4.jpg" />
-                                            </a>
+                                        <div class="art-content">
+                                            <div class="zoom-container">
+                                                <a href="#">
+                                                    <img src="/indexpage/images/4.jpg"/>
+                                                </a>
+                                            </div>
+                                            <p>众生皆妄.</p>
+                                            <div class="t-center"><a class="button button02" href="#">Read More</a></div>
                                         </div>
-                                        <p>众生皆妄.</p>
-                                        <div class="t-center"><a class="button button02" href="#">Read More</a></div>
-                                    </div>
-                                </article>
-                            </div>
+                                    </article>
+                                </div>
+                            </#list>
+
                             <div class="row">
                                 <article>
                                     <div class="art-header">
@@ -126,7 +131,7 @@
                                     <div class="art-content">
                                         <div class="zoom-container">
                                             <a href="#">
-                                                <img src="/index/images/5.jpg" />
+                                                <img src="/indexpage/images/5.jpg"/>
                                             </a>
                                         </div>
                                         <p>众生皆痴.</p>
@@ -147,7 +152,7 @@
                                             <div class="art-content">
                                                 <div class="zoom-container">
                                                     <a href="#">
-                                                        <img src="/index/images/6.jpg" />
+                                                        <img src="/indexpage/images/6.jpg"/>
                                                     </a>
                                                 </div>
                                                 <p>此生痴妄，纵皆是错怨，终是不悔.</p>
@@ -167,7 +172,7 @@
                                             <div class="art-content">
                                                 <div class="zoom-container">
                                                     <a href="#">
-                                                        <img src="/index/images/7.jpg" />
+                                                        <img src="/indexpage/images/7.jpg"/>
                                                     </a>
                                                 </div>
                                                 <p>此生痴妄，纵皆是错怨，终是不悔.</p>
@@ -187,7 +192,7 @@
                                             <div class="art-content">
                                                 <div class="zoom-container">
                                                     <a href="#">
-                                                        <img src="/index/images/8.jpg" />
+                                                        <img src="/indexpage/images/8.jpg"/>
                                                     </a>
                                                 </div>
                                                 <p>此生痴妄，纵皆是错怨，终是不悔.</p>
@@ -207,7 +212,7 @@
                                             <div class="art-content">
                                                 <div class="zoom-container">
                                                     <a href="#">
-                                                        <img src="/index/images/9.jpg" />
+                                                        <img src="/indexpage/images/9.jpg"/>
                                                     </a>
                                                 </div>
                                                 <p>此生痴妄，纵皆是错怨，终是不悔.</p>
@@ -225,7 +230,7 @@
                                 <h5>关于她</h5>
                             </div>
                             <div class="wid-content">
-                                <img src="/index/images/10.jpg" />
+                                <img src="/indexpage/images/10.jpg"/>
                                 <p>她的名字是 Activello ，嗯，不能告诉你更多了.</p>
                             </div>
                         </div>
@@ -254,7 +259,7 @@
                                 <div class="post">
                                     <div class="zoom-container">
                                         <a href="#">
-                                            <img src="/index/images/11.jpg" />
+                                            <img src="/indexpage/images/11.jpg"/>
                                         </a>
                                     </div>
                                     <div class="wrapper">
@@ -269,7 +274,7 @@
                                 <div class="post">
                                     <div class="zoom-container">
                                         <a href="#">
-                                            <img src="/index/images/12.jpg" />
+                                            <img src="/indexpage/images/12.jpg"/>
                                         </a>
                                     </div>
                                     <div class="wrapper">
@@ -284,7 +289,7 @@
                                 <div class="post">
                                     <div class="zoom-container">
                                         <a href="#">
-                                            <img src="/index/images/13.jpg" />
+                                            <img src="/indexpage/images/13.jpg"/>
                                         </a>
                                     </div>
                                     <div class="wrapper">
@@ -299,7 +304,7 @@
                                 <div class="post">
                                     <div class="zoom-container">
                                         <a href="#">
-                                            <img src="/index/images/14.jpg" />
+                                            <img src="/indexpage/images/14.jpg"/>
                                         </a>
                                     </div>
                                     <div class="wrapper">
@@ -336,8 +341,8 @@
                             <div class="wid-content">
                                 <p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
                                 <span>Join 4 other subscribers</span>
-                                <form method="get" action="/search" id="subcribe" >
-                                    <input name="q" type="text" size="40" placeholder="Email Address" />
+                                <form method="get" action="/search" id="subcribe">
+                                    <input name="q" type="text" size="40" placeholder="Email Address"/>
                                 </form>
                                 <a class="button button03" href="#">SUBSCRIBE</a>
                             </div>
@@ -351,23 +356,23 @@
                                 <div class="row">
                                     <div class="col-1-3">
                                         <div class="wrap-col">
-                                            <a href="#"><img src="/index/images/15.jpg" /></a>
-                                            <a href="#"><img src="/index/images/16.jpg" /></a>
-                                            <a href="#"><img src="/index/images/17.jpg" /></a>
+                                            <a href="#"><img src="/indexpage/images/15.jpg"/></a>
+                                            <a href="#"><img src="/indexpage/images/16.jpg"/></a>
+                                            <a href="#"><img src="/indexpage/images/17.jpg"/></a>
                                         </div>
                                     </div>
                                     <div class="col-1-3">
                                         <div class="wrap-col">
-                                            <a href="#"><img src="/index/images/18.jpg" /></a>
-                                            <a href="#"><img src="/index/images/19.jpg" /></a>
-                                            <a href="#"><img src="/index/images/20.jpg" /></a>
+                                            <a href="#"><img src="/indexpage/images/18.jpg"/></a>
+                                            <a href="#"><img src="/indexpage/images/19.jpg"/></a>
+                                            <a href="#"><img src="/indexpage/images/20.jpg"/></a>
                                         </div>
                                     </div>
                                     <div class="col-1-3">
                                         <div class="wrap-col">
-                                            <a href="#"><img src="/index/images/21.jpg" /></a>
-                                            <a href="#"><img src="/index/images/22.jpg" /></a>
-                                            <a href="#"><img src="/index/images/23.jpg" /></a>
+                                            <a href="#"><img src="/indexpage/images/21.jpg"/></a>
+                                            <a href="#"><img src="/indexpage/images/22.jpg"/></a>
+                                            <a href="#"><img src="/indexpage/images/23.jpg"/></a>
                                         </div>
                                     </div>
                                 </div>
@@ -402,18 +407,17 @@
 
 
     <script type="text/javascript">
-        $(function() {
-            if ($.browser.msie && $.browser.version.substr(0,1)<7)
-            {
-                $('li').has('ul').mouseover(function(){
-                    $(this).children('ul').css('visibility','visible');
-                }).mouseout(function(){
-                    $(this).children('ul').css('visibility','hidden');
+        $(function () {
+            if ($.browser.msie && $.browser.version.substr(0, 1) < 7) {
+                $('li').has('ul').mouseover(function () {
+                    $(this).children('ul').css('visibility', 'visible');
+                }).mouseout(function () {
+                    $(this).children('ul').css('visibility', 'hidden');
                 })
             }
 
             /* Mobile */
-            $("#menu-trigger").on("click", function(){
+            $("#menu-trigger").on("click", function () {
                 $("#menu").slideToggle();
             });
 

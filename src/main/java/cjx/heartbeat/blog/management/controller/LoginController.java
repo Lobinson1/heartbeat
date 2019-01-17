@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import static cjx.heartbeat.blog.management.entity.User.USER_SESSION;
+
 /**
  * 登录逻辑控制
  *
@@ -23,18 +25,18 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 @RequestMapping("manager/login")
-public class LoginController extends BaseController{
+public class LoginController extends BaseController {
 
 	@Autowired
 	private UserService userService;
 
 	@RequestMapping(value = "register", method = RequestMethod.GET)
-	public String register(){
+	public String register() {
 		return "manager/login/register";
 	}
 
 	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public String register(User user, Model model){
+	public String register(User user, Model model) {
 		String password = user.getPassword();
 		String encodePwd = Encodes.encodeHex(Digests.sha1(password.getBytes()));
 		user.setPassword(encodePwd);
@@ -44,28 +46,28 @@ public class LoginController extends BaseController{
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String login(HttpServletRequest request, Model model){
+	public String login(HttpServletRequest request, Model model) {
 		String path = request.getParameter("server");
 		model.addAttribute("server", path);
 		return "manager/login/login";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String login(User user, Model model, HttpServletRequest request){
+	public String login(User user, Model model, HttpServletRequest request) {
 		String username = user.getUsername();
 		String password = user.getPassword();
 		String encodePwd = Encodes.encodeHex(Digests.sha1(password.getBytes()));
 		String path = request.getParameter("server");
-		if (userService.checkLogin(username, encodePwd)){
+		if (userService.checkLogin(username, encodePwd)) {
 			User u = userService.getByUsername(username);
 			HttpSession session = request.getSession();
-			session.setAttribute("cjx_user_id", u.getId());
-			if (StringUtils.isNotBlank(path)){
+			session.setAttribute(USER_SESSION, u.getId());
+			if (StringUtils.isNotBlank(path)) {
 				return "redirect:/" + path;
-			}else {
-				return "redirect:/manager/index";
+			} else {
+				return "redirect:/manager/indexpage";
 			}
-		}else {
+		} else {
 			model.addAttribute("errorMsg", "账号密码有误");
 			return "error/loginError";
 		}
@@ -73,11 +75,11 @@ public class LoginController extends BaseController{
 
 	@RequestMapping("checkUsername")
 	@ResponseBody
-	public String checkUsername(HttpServletRequest request){
+	public String checkUsername(HttpServletRequest request) {
 		String username = request.getParameter("username");
-		if (userService.checkUsername(username)){
+		if (userService.checkUsername(username)) {
 			return Error("用户名已存在");
-		}else {
+		} else {
 			return Success("用户名可用");
 		}
 	}

@@ -1,5 +1,6 @@
 package cjx.heartbeat.blog.management.controller;
 
+import cjx.heartbeat.blog.management.constant.Constant;
 import cjx.heartbeat.blog.management.entity.Blog;
 import cjx.heartbeat.blog.management.service.BlogService;
 import cjx.heartbeat.blog.management.service.TypeService;
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ${DESCRIBE}
+ * 文章管理
  *
  * @author chenjunxu
  * @date 2017/10/16
@@ -50,7 +51,7 @@ public class BlogController extends BaseController {
 		long count = blogService.count();
 		model.addAttribute("totalCount", count);
 		model.addAttribute("action", "center");
-		return "manager/index";
+		return "manager/indexpage";
 	}
 
 	@RequestMapping("list")
@@ -68,7 +69,19 @@ public class BlogController extends BaseController {
 
 	@RequestMapping(value = "insert", method = RequestMethod.POST)
 	@ResponseBody
-	public String insert(HttpServletRequest request, Blog blog) {
+	public String insert(HttpServletRequest request, Blog blog, String[] tags) {
+		if (blog.getIsTop() == null || blog.getIsTop() != Constant.YES) {
+			blog.setIsTop(Constant.NO);
+		}
+		StringBuilder tips = new StringBuilder();
+		for (String tag : tags) {
+			tips.append(tag).append(",");
+		}
+		if (tips.toString().endsWith(",")) {
+			tips = new StringBuilder(tips.substring(0, tips.length() - 1));
+		}
+		blog.setTips(tips.toString());
+		blog.setPublishTime(new Date());
 		if (blogService.save(blog) == null) {
 			return Error("创建新博失败");
 		}

@@ -25,7 +25,7 @@ public class IndexController {
 	 */
 	@RequestMapping("manager/index/index")
 	public String controlIndex() {
-		return "manager/index/index";
+		return "manager/indexpage/indexpage";
 	}
 
 	@RequestMapping("manager/index/navCode")
@@ -33,13 +33,13 @@ public class IndexController {
 		String navCode = request.getParameter("code");
 		switch (navCode) {
 			case "console":
-				return "/manager/index/index";
+				return "/manager/indexpage/indexpage";
 			case "blog":
 				return "/manager/blog";
 			case "user":
 				return "/manager/user";
 			default:
-				return "/manager/index/index";
+				return "/manager/indexpage/indexpage";
 		}
 	}
 }

@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
  * ${DESCRIBE}
  *
@@ -32,9 +34,15 @@ public class ShowController {
 	 *
 	 * @return
 	 */
-	@RequestMapping("/index")
+	@RequestMapping("index")
 	public String index(Model model){
-		model.addAttribute("action", "index");
+		List<Blog> tops = blogService.getTopList();
+		List<Blog> news = blogService.getNewList(4);
+
+		model.addAttribute("tops", tops);
+		model.addAttribute("news", news);
+		model.addAttribute("action", "indexpage");
+
 		return "index";
 	}
 

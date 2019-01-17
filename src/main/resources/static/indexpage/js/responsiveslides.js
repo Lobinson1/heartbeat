@@ -277,7 +277,7 @@
               restartCycle();
             }
 
-            // Get index of clicked tab
+            // Get indexpage of clicked tab
             var idx = $tabs.index(this);
 
             // Break if element is already active or currently animated

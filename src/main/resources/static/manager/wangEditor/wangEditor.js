@@ -713,7 +713,7 @@ var config = {
         content: '😀 😃 😄 😁 😆 😅 😂 😊 😇 🙂 🙃 😉 😌 😍 😘 😗 😙 😚 😋 😜 😝 😛 🤑 🤗 🤓 😎 😏 😒 😞 😔 😟 😕 🙁  😣 😖 😫 😩 😤 😠 😡 😶 😐 😑 😯 😦 😧 😮 😲 😵 😳 😱 😨 😰 😢 😥 😭 😓 😪 😴 🙄 🤔 😬 🤐'.split(/\s/)
     }],
 
-    // 编辑区域的 z-index
+    // 编辑区域的 z-indexpage
     zIndex: 10000,
 
     // 是否开启 debug 模式（debug 模式下错误会 throw error 形式抛出）
@@ -2423,7 +2423,7 @@ Table.prototype = {
             return;
         }
 
-        // 获取 td index
+        // 获取 td indexpage
         var $tr = $selectionELem.parent();
         var $tds = $tr.children();
         var tdLength = $tds.length;
@@ -2439,7 +2439,7 @@ Table.prototype = {
             }
         });
 
-        // 获取 tr index
+        // 获取 tr indexpage
         var $tbody = $tr.parent();
         var $trs = $tbody.children();
         var trLength = $trs.length;
@@ -2952,12 +2952,12 @@ Menus.prototype = {
         var $toolbarElem = editor.$toolbarElem;
         var menus = this.menus;
         var config = editor.config;
-        // config.zIndex 是配置的编辑区域的 z-index，菜单的 z-index 得在其基础上 +1
+        // config.zIndex 是配置的编辑区域的 z-indexpage，菜单的 z-indexpage 得在其基础上 +1
         var zIndex = config.zIndex + 1;
         objForEach(menus, function (key, menu) {
             var $elem = menu.$elem;
             if ($elem) {
-                // 设置 z-index
+                // 设置 z-indexpage
                 $elem.css('z-index', zIndex);
                 $toolbarElem.append($elem);
             }

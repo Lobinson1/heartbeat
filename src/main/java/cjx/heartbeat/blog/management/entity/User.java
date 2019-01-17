@@ -17,6 +17,8 @@ import java.util.Date;
 @Entity
 public class User implements Serializable {
 
+	public static final String USER_SESSION = "cjx_user_id";
+
 	@Id
 	private Integer id;
 	private String username;

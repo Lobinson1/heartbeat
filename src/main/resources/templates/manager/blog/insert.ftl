@@ -5,10 +5,16 @@
     <title>index</title>
 <#include "../../include/include.ftl">
     <link href="/manager/css/all-style.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css">
+    <link href="/css/jquery.tagit.css" rel="stylesheet" type="text/css">
+    <link href="/css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/tag-it.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="/manager/wangEditor/wangEditor.js"></script>
 </head>
 <body>
 <header>
+    <#assign bgcolor="#ffffff">
 <#include "../../include/head.ftl"/>
 </header>
 <div class="layui-container">
@@ -23,7 +29,7 @@
                         <blockquote class="layui-elem-quote"
                                     style="background-color: #fff;border-left: solid 5px #93D1FF; line-height: 2px; font-size: 16px">写文章
                         </blockquote>
-                        <form class="layui-form" action="" style="padding-top: 20px;">
+                        <form class="layui-form" action="" style="padding-top: 20px;" method="post">
                             <input type="text" class="layui-input" name="title">
                             <div class="layui-form-item" style="padding-top: 20px;">
                                 <div id="toolbar" style="border: solid 1px #cccccc;"></div>
@@ -44,11 +50,7 @@
                                 <div class="layui-inline">
                                     <label class="layui-form-label" for="type">标签</label>
                                     <div class="layui-input-inline">
-                                        <select name="tips">
-                                        <#list blogType as type>
-                                            <option value="${type.typeId}">${type.typeName}</option>
-                                        </#list>
-                                        </select>
+                                        <ul id="myTags" style="width: 300px; height: 32px; overflow-y: hidden"></ul>
                                     </div>
                                 </div>
                             </div>
@@ -66,6 +68,8 @@
 </div>
 <script type="text/javascript">
     $(function () {
+        $("#myTags").tagit();
+
         layui.use(['form', 'layer'], function () {
             var form = layui.form;
             var layer = layui.layer;
@@ -75,7 +79,7 @@
                 $.ajax({
                     url: '/manager/blog/insert',
                     type: 'post',
-                    data: data.field,
+                    data: $(data.form).serialize(),
                     success: function (data) {
                         data = eval("(" + data + ")");
                         if (data.result === 'success') {

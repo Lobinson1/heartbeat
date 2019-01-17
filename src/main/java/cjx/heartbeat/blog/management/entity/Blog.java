@@ -27,6 +27,7 @@ public class Blog {
 	private String keyword;
 	private Integer type;
 	private String tips;
+	private Integer isTop;
 
 	public Integer getId() {
 		return id;
@@ -90,6 +91,14 @@ public class Blog {
 
 	public void setTips(String tips) {
 		this.tips = tips;
+	}
+
+	public Integer getIsTop() {
+		return isTop;
+	}
+
+	public void setIsTop(Integer isTop) {
+		this.isTop = isTop;
 	}
 
 	@Override

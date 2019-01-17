@@ -8,6 +8,7 @@
 </head>
 <body>
 <header>
+<#assign bgcolor="#ffffff">
 <#include "../include/head.ftl"/>
 </header>
 <div class="layui-container">
