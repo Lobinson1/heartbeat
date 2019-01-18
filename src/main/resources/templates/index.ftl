@@ -78,13 +78,13 @@
                 <div class="callbacks_container">
                     <ul class="rslides" id="slider">
                         <li>
-                            <img src="/indexpage/images/1.jpg" alt="">
+                            <img src="/indexpage/images/pic_3_1.jpg" alt="">
                         </li>
                         <li>
-                            <img src="/indexpage/images/2.jpg" alt="">
+                            <img src="/indexpage/images/pic_7_1.jpg" alt="">
                         </li>
                         <li>
-                            <img src="/indexpage/images/3.jpg" alt="">
+                            <img src="/indexpage/images/pic_23_1.jpg" alt="">
                         </li>
                     </ul>
                 </div>
@@ -103,17 +103,17 @@
                                     <article>
                                         <div class="art-header">
                                             <div class="entry-title">
-                                                <a href="#">水里的世界 画里的念想</a>
+                                                <a href="#">${top.title}</a>
                                             </div>
-                                            <span>2015-11-12</span>
+                                            <span>${top.publishTime}</span>
                                         </div>
                                         <div class="art-content">
                                             <div class="zoom-container">
                                                 <a href="#">
-                                                    <img src="/indexpage/images/4.jpg"/>
+                                                    <img src="${top.showImg}"/>
                                                 </a>
                                             </div>
-                                            <p>众生皆妄.</p>
+                                            <p>${top.blogAbstract}</p>
                                             <div class="t-center"><a class="button button02" href="#">Read More</a></div>
                                         </div>
                                     </article>
@@ -227,26 +227,25 @@
                         <!---- Start Widget ---->
                         <div class="widget wid-about">
                             <div class="wid-header">
-                                <h5>关于她</h5>
+                                <h5>关于他</h5>
                             </div>
                             <div class="wid-content">
-                                <img src="/indexpage/images/10.jpg"/>
-                                <p>她的名字是 Activello ，嗯，不能告诉你更多了.</p>
+                                <img src="/images/pic_10.jpg"/>
+                                <p>他的名字是 Lobinson ，嗯，也可以叫他燕启同学.</p>
                             </div>
                         </div>
                         <!---- Start Widget ---->
                         <div class="widget wid-follow">
                             <div class="wid-header">
-                                <h5>关注她</h5>
+                                <h5>关注他</h5>
                             </div>
                             <div class="wid-content">
                                 <ul class="quick-link">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href=""><i class="fa fa-github"></i></a></li>
+                                    <li>
+                                        <a target="_blank" href="https://weibo.com/u/2779520971?is_all=1"><i style="font-size: 32px;" class="layui-icon layui-icon-login-weibo"></i></a>
+                                    </li>
+                                    <li><a href=""><i style="font-size: 32px;" class="layui-icon layui-icon-login-wechat"></i></a></li>
+                                    <li><a href=""><i style="font-size: 32px;" class="layui-icon layui-icon-login-qq"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -256,127 +255,89 @@
                                 <h5>最新情报</h5>
                             </div>
                             <div class="wid-content">
+                                <#list news as new>
                                 <div class="post">
                                     <div class="zoom-container">
                                         <a href="#">
-                                            <img src="/indexpage/images/11.jpg"/>
+                                            <img src="${new.showImg}"/>
                                         </a>
                                     </div>
                                     <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">这是啥</a></h5>
+                                        <h5 class="vid-name" style="margin-bottom: 5px;"><a href="#">${new.title}</a></h5>
                                         <div class="info">
-                                            <h6>By <a href="#">不知名</a></h6>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
+                                            <h6 style="padding-left: 6px;"> By Lobinson</h6>
+                                            <span><i style="padding: 7px;" class="fa fa-calendar"></i>${new.publishTime}</span>
+                                            <span><i style="padding: 7px;" class="fa fa-heart"></i>${new.viewCount}</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="post">
-                                    <div class="zoom-container">
-                                        <a href="#">
-                                            <img src="/indexpage/images/12.jpg"/>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">这是啥</a></h5>
-                                        <div class="info">
-                                            <h6>By <a href="#">不知名</a></h6>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="zoom-container">
-                                        <a href="#">
-                                            <img src="/indexpage/images/13.jpg"/>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">这是啥</a></h5>
-                                        <div class="info">
-                                            <h6>By <a href="#">不知名</a></h6>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post">
-                                    <div class="zoom-container">
-                                        <a href="#">
-                                            <img src="/indexpage/images/14.jpg"/>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper">
-                                        <h5 class="vid-name"><a href="#">这是啥</a></h5>
-                                        <div class="info">
-                                            <h6>By <a href="#">不知名</a></h6>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                </#list>
                             </div>
                         </div>
                         <!---- Start Widget ---->
-                        <div class="widget wid-category">
-                            <div class="wid-header">
-                                <h5>类别</h5>
-                            </div>
-                            <div class="wid-content">
-                                <ul>
-                                    <li><a href="#">发生格局</a></li>
-                                    <li><a href="#">样板</a></li>
-                                    <li><a href="#">你的猫A</a></li>
-                                    <li><a href="#">边缘地带</a></li>
-                                    <li><a href="#">你的猫B</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <#--<div class="widget wid-category">-->
+                            <#--<div class="wid-header">-->
+                                <#--<h5>类别</h5>-->
+                            <#--</div>-->
+                            <#--<div class="wid-content">-->
+                                <#--<ul>-->
+                                    <#--<li><a href="#">发生格局</a></li>-->
+                                    <#--<li><a href="#">样板</a></li>-->
+                                    <#--<li><a href="#">你的猫A</a></li>-->
+                                    <#--<li><a href="#">边缘地带</a></li>-->
+                                    <#--<li><a href="#">你的猫B</a></li>-->
+                                <#--</ul>-->
+                            <#--</div>-->
+                        <#--</div>-->
                         <!---- Start Widget ---->
                         <div class="widget wid-subcribe">
                             <div class="wid-header">
-                                <h5>SUBSCRIBE TO BLOG VIA EMAIL</h5>
+                                <h5>Email的故事</h5>
                             </div>
                             <div class="wid-content">
-                                <p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
-                                <span>Join 4 other subscribers</span>
-                                <form method="get" action="/search" id="subcribe">
-                                    <input name="q" type="text" size="40" placeholder="Email Address"/>
-                                </form>
-                                <a class="button button03" href="#">SUBSCRIBE</a>
+                                <p>如果你想要遇见我，如果你有故事想告诉我，可以给我发邮件哟.</p>
+                                <span>给我发邮件吧：lobinson_cjx@163.com</span>
+                            </div>
+                        </div>
+                        <div class="widget wid-subcribe">
+                            <div class="wid-header">
+                                <h5>另一个网址</h5>
+                            </div>
+                            <div class="wid-content">
+                                <p>悄悄的告诉你们哟.</p>
+                                <span>给我发邮件吧：lobinson_cjx@163.com</span>
                             </div>
                         </div>
                         <!---- Start Widget ---->
                         <div class="widget wid-follow">
-                            <div class="wid-header">
-                                <h5>FOLLOW ME ON INSTAGRAM</h5>
-                            </div>
-                            <div class="wid-content">
-                                <div class="row">
-                                    <div class="col-1-3">
-                                        <div class="wrap-col">
-                                            <a href="#"><img src="/indexpage/images/15.jpg"/></a>
-                                            <a href="#"><img src="/indexpage/images/16.jpg"/></a>
-                                            <a href="#"><img src="/indexpage/images/17.jpg"/></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-1-3">
-                                        <div class="wrap-col">
-                                            <a href="#"><img src="/indexpage/images/18.jpg"/></a>
-                                            <a href="#"><img src="/indexpage/images/19.jpg"/></a>
-                                            <a href="#"><img src="/indexpage/images/20.jpg"/></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-1-3">
-                                        <div class="wrap-col">
-                                            <a href="#"><img src="/indexpage/images/21.jpg"/></a>
-                                            <a href="#"><img src="/indexpage/images/22.jpg"/></a>
-                                            <a href="#"><img src="/indexpage/images/23.jpg"/></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <#--<div class="wid-header">-->
+                                <#--<h5>FOLLOW ME ON INSTAGRAM</h5>-->
+                            <#--</div>-->
+                            <#--<div class="wid-content">-->
+                                <#--<div class="row">-->
+                                    <#--<div class="col-1-3">-->
+                                        <#--<div class="wrap-col">-->
+                                            <#--<a href="#"><img src="/indexpage/images/15.jpg"/></a>-->
+                                            <#--<a href="#"><img src="/indexpage/images/16.jpg"/></a>-->
+                                            <#--<a href="#"><img src="/indexpage/images/17.jpg"/></a>-->
+                                        <#--</div>-->
+                                    <#--</div>-->
+                                    <#--<div class="col-1-3">-->
+                                        <#--<div class="wrap-col">-->
+                                            <#--<a href="#"><img src="/indexpage/images/18.jpg"/></a>-->
+                                            <#--<a href="#"><img src="/indexpage/images/19.jpg"/></a>-->
+                                            <#--<a href="#"><img src="/indexpage/images/20.jpg"/></a>-->
+                                        <#--</div>-->
+                                    <#--</div>-->
+                                    <#--<div class="col-1-3">-->
+                                        <#--<div class="wrap-col">-->
+                                            <#--<a href="#"><img src="/indexpage/images/21.jpg"/></a>-->
+                                            <#--<a href="#"><img src="/indexpage/images/22.jpg"/></a>-->
+                                            <#--<a href="#"><img src="/indexpage/images/23.jpg"/></a>-->
+                                        <#--</div>-->
+                                    <#--</div>-->
+                                <#--</div>-->
+                            <#--</div>-->
                         </div>
                     </div>
                 </div>
@@ -389,15 +350,14 @@
                 <div class="row">
                     <div class="full">
                         <ul class="quick-link">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fa fa-github"></i></a></li>
+                            <li>
+                                <a target="_blank" href="https://weibo.com/u/2779520971?is_all=1"><i style="font-size: 32px;" class="layui-icon layui-icon-login-weibo"></i></a>
+                            </li>
+                            <li><a href=""><i style="font-size: 32px;" class="layui-icon layui-icon-login-wechat"></i></a></li>
+                            <li><a href=""><i style="font-size: 32px;" class="layui-icon layui-icon-login-qq"></i></a></li>
                         </ul>
                         <div class="copy-right">
-                            <p>Copyright 20xx - More </p>
+                            <p>Copyright 2018 - More </p>
                         </div>
                     </div>
                 </div>

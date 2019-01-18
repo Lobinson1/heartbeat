@@ -27,7 +27,9 @@ public class Blog {
 	private String keyword;
 	private Integer type;
 	private String tips;
+	private Integer viewCount;
 	private Integer isTop;
+	private String showImg;
 
 	public Integer getId() {
 		return id;
@@ -99,6 +101,22 @@ public class Blog {
 
 	public void setIsTop(Integer isTop) {
 		this.isTop = isTop;
+	}
+
+	public Integer getViewCount() {
+		return viewCount;
+	}
+
+	public void setViewCount(Integer viewCount) {
+		this.viewCount = viewCount;
+	}
+
+	public String getShowImg() {
+		return showImg;
+	}
+
+	public void setShowImg(String showImg) {
+		this.showImg = showImg;
 	}
 
 	@Override
