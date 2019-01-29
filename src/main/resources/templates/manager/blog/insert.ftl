@@ -14,14 +14,14 @@
 </head>
 <body>
 <header>
-    <#assign bgcolor="#ffffff">
+<#assign bgcolor="#ffffff">
 <#include "../../include/head.ftl"/>
 </header>
 <div class="layui-container">
     <div class="layui-row">
         <div class="layui-row layui-col-space10">
             <div class="layui-col-md2">
-                <#include "../../include/leftNav.ftl">
+            <#include "../../include/leftNav.ftl">
             </div>
             <div class="layui-col-md10">
                 <div class="info-content">
@@ -55,6 +55,21 @@
                                 </div>
                             </div>
                             <div class="layui-form-item">
+                                <label class="layui-form-label" for="type">展示图片</label>
+                                <div class="layui-input-inline" style="min-width: 190px;">
+                                    <a href="javascript:void(0);" id="img-btn" type="button" class="layui-btn layui-btn-sm"><i
+                                            class="layui-icon layui-icon-upload"></i>上传图片</a>
+                                    <span id="img-name" style="padding-left: 30px; font-size: 18px;"></span>
+                                    <input type="hidden" id="imgpath" name="showImg" />
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" for="type">简述</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" style="width: 100%" name="blogAbstract" />
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
                                 <div class="layui-input-block">
                                     <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">保存</button>
                                 </div>
@@ -70,9 +85,35 @@
     $(function () {
         $("#myTags").tagit();
 
-        layui.use(['form', 'layer'], function () {
+        layui.use(['form', 'layer', 'upload'], function () {
             var form = layui.form;
             var layer = layui.layer;
+
+            var upload = layui.upload;
+
+            //执行实例
+            var uploadInst = upload.render({
+                elem: '#img-btn' //绑定元素
+                , url: '/manager/blog/upload/' //上传接口
+                , accept: 'images'
+                , acceptMime: 'image/*'
+                , before: function(obj){ //obj参数包含的信息，跟 choose回调完全一致，可参见上文。
+                    obj.preview(function(index, file, result) {
+                        console.log(file.name); //得到文件对象
+                        $("#img-name").html(file.name);
+                    });
+                    layer.load(); //上传loading
+                }
+                , done: function (res) {
+                    $("#imgpath").val(res.data[0]);
+                    layer.closeAll('loading'); //关闭loading
+                }
+                , error: function () {
+                    layer.closeAll('loading'); //关闭loading
+                    layer.msg('上传接口出错');
+                }
+            });
+
             form.render();
             form.render('select');
             form.on('submit', function (data) {

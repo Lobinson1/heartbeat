@@ -8,42 +8,66 @@
     <style>
         .tips-text {
             padding-right: 20px;
+            font-size: 16px;
+        }
+
+        .bg-div:before{
+            background: url(${blog.showImg}) repeat-y;
+            background-size: cover;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;/*-1 可以当背景*/
+            -webkit-filter: blur(3px);
+            filter: blur(3px);
         }
     </style>
 </head>
 <body>
 <div class="header" style="background-color: #000000">
-    <#assign bgcolor="#000000">
+<#assign bgcolor="#000000">
 <#include "../include/head.ftl"/>
 </div>
-<div class="layui-container">
-    <div class="layui-row">
-        <div class="layui-col-md10" style="padding: 15px 5px; border-right: 1px solid #cccccc" >
-            <div class="layui-row layui-col-space20" style="text-align: center;">
-                <span class="tips-text">[${blogType}]</span>
-                <span style="font-size: 20px; font-weight: bold;">${blog.title}</span>
-            </div>
-            <div class="layui-row layui-col-space20" style="padding-top: 30px; text-align: center;">
-                <span class="tips-text">${blog.publishTime}</span>
-                <span class="tips-text">${author}</span>
-                <span class="tips-text">标签：[${blog.tips}]</span>
-            </div>
-            <div class="layui-row layui-col-space10" style="padding-top: 50px;">
-                <div class="layui-col-md12">
-                ${blog.content}
+<div class="bg-div">
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md11" style="padding: 15px 5px; border-right: 1px solid #cccccc; height: 100%">
+                <div class="layui-row layui-col-space20" style="text-align: center; padding-top: 50px;">
+                    <span class="tips-text">[${blogType}]</span>
+                    <span style="font-size: 26px; font-weight: bold;">${blog.title}</span>
+                </div>
+                <div class="layui-row layui-col-space20" style="padding-top: 30px; text-align: center;">
+                    <span class="tips-text">${blog.publishTime}</span>
+                    <span class="tips-text">${author}</span>
+                    <span class="tips-text">标签：[${blog.tips}]</span>
+                </div>
+                <div class="layui-row layui-col-space10" style="padding-top: 50px;">
+                    <div class="layui-col-md12" style="height:100%;">
+                    ${blog.content}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="layui-col-md2" style="padding: 15px 5px;">
+            <div class="layui-col-md1" style="padding: 15px 5px;">
 
+            </div>
         </div>
     </div>
 </div>
-
 <script type="text/javascript">
     layui.use('element', function () {
         var element = layui.element;
-    })
+    });
+    window.onscroll = function () {
+        $('.bg-div').append('<style>.bg-div::before{top:'+$(window).scrollTop()+'px}</style>');
+//        if ($(window).scrollTop() < $(".header").outerHeight(true)) {
+//            $('.bg-div:before').css('top', 'auto');
+//        } else {
+//            $('.bg-div:before').css('top', '0');
+//        }
+    };
 </script>
 </body>
 </html>

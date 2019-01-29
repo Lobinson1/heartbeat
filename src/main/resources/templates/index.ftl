@@ -78,13 +78,13 @@
                 <div class="callbacks_container">
                     <ul class="rslides" id="slider">
                         <li>
-                            <img src="/indexpage/images/pic_3_1.jpg" alt="">
+                            <img src="/manager/blog/getFile?filename=pic_3_1.jpg" alt="">
                         </li>
                         <li>
-                            <img src="/indexpage/images/pic_7_1.jpg" alt="">
+                            <img src="/manager/blog/getFile?filename=pic_7_1.jpg" alt="">
                         </li>
                         <li>
-                            <img src="/indexpage/images/pic_23_1.jpg" alt="">
+                            <img src="/manager/blog/getFile?filename=pic_23_1.jpg" alt="">
                         </li>
                     </ul>
                 </div>
@@ -103,42 +103,22 @@
                                     <article>
                                         <div class="art-header">
                                             <div class="entry-title">
-                                                <a href="#">${top.title}</a>
+                                                <a href="/blog/${top.id}" target="_blank">${top.title}</a>
                                             </div>
                                             <span>${top.publishTime}</span>
                                         </div>
                                         <div class="art-content">
                                             <div class="zoom-container">
-                                                <a href="#">
+                                                <a href="/blog/${top.id}" target="_blank">
                                                     <img src="${top.showImg}"/>
                                                 </a>
                                             </div>
                                             <p>${top.blogAbstract}</p>
-                                            <div class="t-center"><a class="button button02" href="#">Read More</a></div>
+                                            <div class="t-center"><a class="button button02" href="/blog/${top.id}" target="_blank">Read More</a></div>
                                         </div>
                                     </article>
                                 </div>
                             </#list>
-
-                            <div class="row">
-                                <article>
-                                    <div class="art-header">
-                                        <div class="entry-title">
-                                            <a href="#">一个人吃饭旅行到处走走停停</a>
-                                        </div>
-                                        <span>2015-11-12</span>
-                                    </div>
-                                    <div class="art-content">
-                                        <div class="zoom-container">
-                                            <a href="#">
-                                                <img src="/indexpage/images/5.jpg"/>
-                                            </a>
-                                        </div>
-                                        <p>众生皆痴.</p>
-                                        <div class="t-center"><a class="button button02" href="#">Read More</a></div>
-                                    </div>
-                                </article>
-                            </div>
                             <div class="row">
                                 <div class="col-1-2">
                                     <div class="wrap-col">
@@ -230,7 +210,7 @@
                                 <h5>关于他</h5>
                             </div>
                             <div class="wid-content">
-                                <img src="/images/pic_10.jpg"/>
+                                <img src="/manager/blog/getFile?filename=pic_10.jpg"/>
                                 <p>他的名字是 Lobinson ，嗯，也可以叫他燕启同学.</p>
                             </div>
                         </div>
@@ -258,12 +238,12 @@
                                 <#list news as new>
                                 <div class="post">
                                     <div class="zoom-container">
-                                        <a href="#">
+                                        <a href="/blog/${new.id}" target="_blank">
                                             <img src="${new.showImg}"/>
                                         </a>
                                     </div>
                                     <div class="wrapper">
-                                        <h5 class="vid-name" style="margin-bottom: 5px;"><a href="#">${new.title}</a></h5>
+                                        <h5 class="vid-name" style="margin-bottom: 5px;"><a href="/blog/${new.id}" target="_blank">${new.title}</a></h5>
                                         <div class="info">
                                             <h6 style="padding-left: 6px;"> By Lobinson</h6>
                                             <span><i style="padding: 7px;" class="fa fa-calendar"></i>${new.publishTime}</span>

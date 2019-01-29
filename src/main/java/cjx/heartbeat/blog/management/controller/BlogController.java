@@ -5,6 +5,8 @@ import cjx.heartbeat.blog.management.entity.Blog;
 import cjx.heartbeat.blog.management.service.BlogService;
 import cjx.heartbeat.blog.management.service.TypeService;
 import com.alibaba.fastjson.JSONObject;
+import net.coobird.thumbnailator.Thumbnailator;
+import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -51,7 +53,7 @@ public class BlogController extends BaseController {
 		long count = blogService.count();
 		model.addAttribute("totalCount", count);
 		model.addAttribute("action", "center");
-		return "manager/indexpage";
+		return "manager/index";
 	}
 
 	@RequestMapping("list")
@@ -82,6 +84,7 @@ public class BlogController extends BaseController {
 		}
 		blog.setTips(tips.toString());
 		blog.setPublishTime(new Date());
+		blog.setViewCount(0);
 		if (blogService.save(blog) == null) {
 			return Error("创建新博失败");
 		}
@@ -105,7 +108,7 @@ public class BlogController extends BaseController {
 			List<String> list = new ArrayList<>();
 			for (String s : map.keySet()) {
 				String fileName = getFileName(s);
-				File file = new File(UPLOAD_PATH + fileName);
+				File file = new File(UPLOAD_PATH + "/" + fileName);
 				list.add("/manager/blog/getFile?filename=" + URLEncoder.encode(fileName, "UTF-8"));
 				// 判断文件路径是否存在
 				if (!file.getParentFile().exists()) {
@@ -116,12 +119,15 @@ public class BlogController extends BaseController {
 				file.createNewFile();
 				MultipartFile multipartFile = map.get(s);
 				is = multipartFile.getInputStream();
-				byte[] b = new byte[1024];
 				fos = new FileOutputStream(file);
 				bos = new BufferedOutputStream(fos);
-				while (is.read(b) > 0) {
-					bos.write(b);
+				byte[] buffer = new byte[1024];
+				int len;
+				while((len = is.read(buffer)) >0){
+					bos.write(buffer, 0, len);
+					bos.flush();
 				}
+				Thumbnails.of(file).scale(1).outputQuality(0.5f).toFile(file);
 			}
 			object.put("errno", 0);
 			object.put("data", list.toArray());
@@ -150,16 +156,20 @@ public class BlogController extends BaseController {
 	@RequestMapping("getFile")
 	@ResponseBody
 	public void getFile(String filename, HttpServletResponse response) {
-		File file = new File(UPLOAD_PATH + filename);
+		File file = new File(UPLOAD_PATH + "/" + filename);
 		OutputStream os = null;
-		FileInputStream fis = null;
+//		FileInputStream fis = null;
 		try {
 			os = response.getOutputStream();
-			fis = new FileInputStream(file);
-			byte[] b = new byte[1024];
-			while (fis.read(b) > 0) {
-				os.write(b);
-			}
+			Thumbnails.of(file)
+					.scale(1)
+					.outputQuality(0.5f)
+					.toOutputStream(os);
+//			fis = new FileInputStream(file);
+//			byte[] b = new byte[1024];
+//			while (fis.read(b) > 0) {
+//				os.write(b);
+//			}
 			os.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -168,9 +178,9 @@ public class BlogController extends BaseController {
 				if (os != null) {
 					os.close();
 				}
-				if (fis != null) {
-					fis.close();
-				}
+//				if (fis != null) {
+//					fis.close();
+//				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

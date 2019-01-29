@@ -894,7 +894,8 @@ a cite {
     position: relative;
     margin: 0 auto;
     padding: 0 15px;
-    box-sizing: border-box
+    box-sizing: border-box;
+    background-color: white;
 }
 
 .layui-fluid {
@@ -2042,7 +2043,7 @@ a cite {
 
 .layui-form-item .layui-input-inline {
     float: left;
-    width: 190px;
+    min-width: 190px;
     margin-right: 10px
 }
 
