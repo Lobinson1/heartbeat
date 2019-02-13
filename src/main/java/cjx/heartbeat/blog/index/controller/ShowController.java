@@ -34,7 +34,7 @@ public class ShowController {
 	 *
 	 * @return
 	 */
-	@RequestMapping("index")
+	@RequestMapping("/")
 	public String index(Model model){
 		List<Blog> tops = blogService.getTopList();
 		List<Blog> news = blogService.getNewList(4);

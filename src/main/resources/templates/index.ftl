@@ -21,6 +21,7 @@
     <link href= "/indexpage/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="/indexpage/js/jquery183.min.js"></script>
     <script src="/indexpage/js/responsiveslides.min.js"></script>
+    <script src="/layui/lay/modules/layer.js"></script>
     <script>
         $(function () {
             // Slideshow
@@ -119,88 +120,88 @@
                                     </article>
                                 </div>
                             </#list>
-                            <div class="row">
-                                <div class="col-1-2">
-                                    <div class="wrap-col">
-                                        <article style="border:none;">
-                                            <div class="art-header">
-                                                <div class="entry-title">
-                                                    <a href="#">脚下</a>
-                                                </div>
-                                                <span>2015-11-12</span>
-                                            </div>
-                                            <div class="art-content">
-                                                <div class="zoom-container">
-                                                    <a href="#">
-                                                        <img src="/indexpage/images/6.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <p>此生痴妄，纵皆是错怨，终是不悔.</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-1-2">
-                                    <div class="wrap-col">
-                                        <article style="border:none;">
-                                            <div class="art-header">
-                                                <div class="entry-title">
-                                                    <a href="#">匠人</a>
-                                                </div>
-                                                <span>2015-11-12</span>
-                                            </div>
-                                            <div class="art-content">
-                                                <div class="zoom-container">
-                                                    <a href="#">
-                                                        <img src="/indexpage/images/7.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <p>此生痴妄，纵皆是错怨，终是不悔.</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-1-2">
-                                    <div class="wrap-col">
-                                        <article style="border:none;">
-                                            <div class="art-header">
-                                                <div class="entry-title">
-                                                    <a href="#">丛生</a>
-                                                </div>
-                                                <span>2015-11-12</span>
-                                            </div>
-                                            <div class="art-content">
-                                                <div class="zoom-container">
-                                                    <a href="#">
-                                                        <img src="/indexpage/images/8.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <p>此生痴妄，纵皆是错怨，终是不悔.</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                                <div class="col-1-2">
-                                    <div class="wrap-col">
-                                        <article style="border:none;">
-                                            <div class="art-header">
-                                                <div class="entry-title">
-                                                    <a href="#">看你</a>
-                                                </div>
-                                                <span>2015-11-12</span>
-                                            </div>
-                                            <div class="art-content">
-                                                <div class="zoom-container">
-                                                    <a href="#">
-                                                        <img src="/indexpage/images/9.jpg"/>
-                                                    </a>
-                                                </div>
-                                                <p>此生痴妄，纵皆是错怨，终是不悔.</p>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                            </div>
+                            <#--<div class="row">-->
+                                <#--<div class="col-1-2">-->
+                                    <#--<div class="wrap-col">-->
+                                        <#--<article style="border:none;">-->
+                                            <#--<div class="art-header">-->
+                                                <#--<div class="entry-title">-->
+                                                    <#--<a href="#">脚下</a>-->
+                                                <#--</div>-->
+                                                <#--<span>2015-11-12</span>-->
+                                            <#--</div>-->
+                                            <#--<div class="art-content">-->
+                                                <#--<div class="zoom-container">-->
+                                                    <#--<a href="#">-->
+                                                        <#--<img src="/indexpage/images/6.jpg"/>-->
+                                                    <#--</a>-->
+                                                <#--</div>-->
+                                                <#--<p>此生痴妄，纵皆是错怨，终是不悔.</p>-->
+                                            <#--</div>-->
+                                        <#--</article>-->
+                                    <#--</div>-->
+                                <#--</div>-->
+                                <#--<div class="col-1-2">-->
+                                    <#--<div class="wrap-col">-->
+                                        <#--<article style="border:none;">-->
+                                            <#--<div class="art-header">-->
+                                                <#--<div class="entry-title">-->
+                                                    <#--<a href="#">匠人</a>-->
+                                                <#--</div>-->
+                                                <#--<span>2015-11-12</span>-->
+                                            <#--</div>-->
+                                            <#--<div class="art-content">-->
+                                                <#--<div class="zoom-container">-->
+                                                    <#--<a href="#">-->
+                                                        <#--<img src="/indexpage/images/7.jpg"/>-->
+                                                    <#--</a>-->
+                                                <#--</div>-->
+                                                <#--<p>此生痴妄，纵皆是错怨，终是不悔.</p>-->
+                                            <#--</div>-->
+                                        <#--</article>-->
+                                    <#--</div>-->
+                                <#--</div>-->
+                                <#--<div class="col-1-2">-->
+                                    <#--<div class="wrap-col">-->
+                                        <#--<article style="border:none;">-->
+                                            <#--<div class="art-header">-->
+                                                <#--<div class="entry-title">-->
+                                                    <#--<a href="#">丛生</a>-->
+                                                <#--</div>-->
+                                                <#--<span>2015-11-12</span>-->
+                                            <#--</div>-->
+                                            <#--<div class="art-content">-->
+                                                <#--<div class="zoom-container">-->
+                                                    <#--<a href="#">-->
+                                                        <#--<img src="/indexpage/images/8.jpg"/>-->
+                                                    <#--</a>-->
+                                                <#--</div>-->
+                                                <#--<p>此生痴妄，纵皆是错怨，终是不悔.</p>-->
+                                            <#--</div>-->
+                                        <#--</article>-->
+                                    <#--</div>-->
+                                <#--</div>-->
+                                <#--<div class="col-1-2">-->
+                                    <#--<div class="wrap-col">-->
+                                        <#--<article style="border:none;">-->
+                                            <#--<div class="art-header">-->
+                                                <#--<div class="entry-title">-->
+                                                    <#--<a href="#">看你</a>-->
+                                                <#--</div>-->
+                                                <#--<span>2015-11-12</span>-->
+                                            <#--</div>-->
+                                            <#--<div class="art-content">-->
+                                                <#--<div class="zoom-container">-->
+                                                    <#--<a href="#">-->
+                                                        <#--<img src="/indexpage/images/9.jpg"/>-->
+                                                    <#--</a>-->
+                                                <#--</div>-->
+                                                <#--<p>此生痴妄，纵皆是错怨，终是不悔.</p>-->
+                                            <#--</div>-->
+                                        <#--</article>-->
+                                    <#--</div>-->
+                                <#--</div>-->
+                            <#--</div>-->
                         </div>
                     </div>
                     <div id="sidebar" class="col-1-3">
@@ -281,11 +282,11 @@
                         </div>
                         <div class="widget wid-subcribe">
                             <div class="wid-header">
-                                <h5>另一个网址</h5>
+                                <h5>悄悄话</h5>
                             </div>
                             <div class="wid-content">
                                 <p>悄悄的告诉你们哟.</p>
-                                <span>给我发邮件吧：lobinson_cjx@163.com</span>
+                                <span>你被骗了呢</span>
                             </div>
                         </div>
                         <!---- Start Widget ---->
@@ -333,8 +334,8 @@
                             <li>
                                 <a target="_blank" href="https://weibo.com/u/2779520971?is_all=1"><i style="font-size: 32px;" class="layui-icon layui-icon-login-weibo"></i></a>
                             </li>
-                            <li><a href=""><i style="font-size: 32px;" class="layui-icon layui-icon-login-wechat"></i></a></li>
-                            <li><a href=""><i style="font-size: 32px;" class="layui-icon layui-icon-login-qq"></i></a></li>
+                            <li><a href="javascript:void(0);" onclick="wechat()"><i style="font-size: 32px;" class="layui-icon layui-icon-login-wechat"></i></a></li>
+                            <li><a href="javascript:void(0);" onclick="qq()"><i style="font-size: 32px;" class="layui-icon layui-icon-login-qq"></i></a></li>
                         </ul>
                         <div class="copy-right">
                             <p>Copyright 2018 - More </p>
@@ -365,6 +366,18 @@
             var isiPad = navigator.userAgent.match(/iPad/i) != null;
             if (isiPad) $('#menu ul').addClass('no-transition');
         });
+        
+        function wechat() {
+            layer.open({
+                context: '<img src="/indexpage/images/wechat.jpg">'
+            })
+        }
+
+        function qq() {
+            layer.open({
+                context: '1111'
+            })
+        }
 
     </script>
 

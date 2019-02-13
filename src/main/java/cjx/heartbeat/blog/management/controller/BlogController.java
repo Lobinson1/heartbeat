@@ -123,7 +123,7 @@ public class BlogController extends BaseController {
 				bos = new BufferedOutputStream(fos);
 				byte[] buffer = new byte[1024];
 				int len;
-				while((len = is.read(buffer)) >0){
+				while ((len = is.read(buffer)) > 0) {
 					bos.write(buffer, 0, len);
 					bos.flush();
 				}
@@ -158,18 +158,9 @@ public class BlogController extends BaseController {
 	public void getFile(String filename, HttpServletResponse response) {
 		File file = new File(UPLOAD_PATH + "/" + filename);
 		OutputStream os = null;
-//		FileInputStream fis = null;
 		try {
 			os = response.getOutputStream();
-			Thumbnails.of(file)
-					.scale(1)
-					.outputQuality(0.5f)
-					.toOutputStream(os);
-//			fis = new FileInputStream(file);
-//			byte[] b = new byte[1024];
-//			while (fis.read(b) > 0) {
-//				os.write(b);
-//			}
+			Thumbnails.of(file).scale(1).outputQuality(0.5f).toOutputStream(os);
 			os.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -178,9 +169,6 @@ public class BlogController extends BaseController {
 				if (os != null) {
 					os.close();
 				}
-//				if (fis != null) {
-//					fis.close();
-//				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

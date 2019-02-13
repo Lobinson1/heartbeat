@@ -3,6 +3,11 @@
     .layui-nav .layui-nav-item a{color: #8C918F}
     .layui-nav .layui-nav-item a:hover{color: #93D1FF}
     .top-header { border-bottom: 1px solid #ccc; }
+    body {
+        font: 14px/25px Arial;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1px;
+    }
 </style>
 <link rel="stylesheet" href="/indexpage/css/zerogrid.css">
 <div class="top-header">
@@ -10,13 +15,13 @@
         <nav id="menu-wrap">
             <ul class="layui-nav layui-bg-blue layui-bg-white">
                 <li class="layui-nav-item <#if action?? && action == 'index'>layui-this</#if>">
-                    <a href="/index">HOME</a>
+                    <a class="head-menu-a" href="/index">HOME</a>
                 </li>
                 <li class="layui-nav-item <#if action?? && action == 'center'>layui-this</#if>">
-                    <a href="/manager/blog">CENTER</a>
+                    <a class="head-menu-a" href="/manager/blog">CENTER</a>
                 </li>
                 <li class="layui-nav-item <#if action?? && action == 'about'>layui-this</#if>">
-                    <a href="/about">IS ME</a>
+                    <a class="head-menu-a" href="/about">IS ME</a>
                 </li>
             </ul>
         </nav>
