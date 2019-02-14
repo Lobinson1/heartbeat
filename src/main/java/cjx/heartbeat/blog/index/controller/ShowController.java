@@ -46,6 +46,11 @@ public class ShowController {
 		return "index";
 	}
 
+	@RequestMapping("/loving")
+	public String heart() {
+		return "heart";
+	}
+
 	@RequestMapping("/blog/{id}")
 	public String detail(@PathVariable String id, Model model){
 		Blog blog = blogService.getById(Integer.valueOf(id));
